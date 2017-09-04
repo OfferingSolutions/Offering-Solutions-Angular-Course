@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<!--<link rel="stylesheet" href="css/theme/white.css">-->
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h2>Introduction</h2>
+				<h2>to Angular</h2>
+			</section>
+
+			<section>
+				<h2>Languages</h2>
+				<ul>
+					<li>Javascript</li>
+					<li>Typescript</li>
+					<ul>
+						<li>Google Team uses TS too</li>
+						<li>Transpiled to ES 5</li>
+					</ul>
+					<li>Dart, Coffeescript, etc.</li>
+				</ul>
+				<p><b>It's just Javascript!!!</b></p>
+			</section>
+
+			<section>
+				<h2>Editor</h2>
+				<ul>
+					<li>Visual Studio</li>
+					<li>VSCode</li>
+					<li>WebStorm</li>
+					<li>Eclipse</li>
+					<li>IntelliJ</li>
+					<li>Atom</li>
+					<li>Sublime</li>
+					<li>...</li>
+				</ul>
+				<p><b>Any texteditor you want</b></p>
+			</section>
+
+			<section>
+				<img src="assets/vscode.jpg">
+			</section>
+
+			<section>
+				<img src="assets/plugins.jpg">
+			</section>
+
+			<section>
+				<h2>Node Package Manager</h2>
+				<ul>
+					<li><a href="https://nodejs.org/en/">NodeJS</a></li>
+					<li><a href="http://npmjs.org">Paket Library</a></li>
+				</ul>
+				<pre><code class="hljs" data-trim contenteditable>
+npm install
+npm install [PackageName] --save
+npm install [PackageName] --save-dev
+npm install [PackageName] -g
+npm uninstall [PackageName]
+					</code></pre>
+			</section>
+
+			<section>
+				<h2>Yarn</h2>
+				<ul>
+					<li><a href="https://yarnpkg.com/lang/en/">Yarn Package Manager</a></li>
+					<li>yarn.lock-File</li>
+				</ul>
+			</section>
+
+			<section style="font-size: 0.8em;">
+				<h2>NPM // YARN</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>npm</th>
+							<th>yarn</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>npm install</td>
+							<td>yarn install</td>
+						</tr>
+						<tr>
+							<td>npm install --save [package]</td>
+							<td>yarn add [package]</td>
+						</tr>
+						<tr>
+							<td>npm install --global [package]</td>
+							<td>yarn global add [package]</td>
+						</tr>
+						<tr>
+							<td>npm rebuild</td>
+							<td>yarn install --force</td>
+						</tr>
+						<tr>
+							<td>npm uninstall --save [package]</td>
+							<td>yarn remove [package]</td>
+						</tr>
+						<tr>
+							<td>npm uninstall --save-dev [package]</td>
+							<td>yarn remove [package]</td>
+						</tr>
+						<tr>
+							<td>nrm -rf node_modules && npm install</td>
+							<td>yarn upgrade</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<h2>What (t... f...) is Angular?</h2>
+				<p>Javascript Framework</p>
+				<p>Written in Typescript</p>
+				<p>Creating client side (web)applications</p>
+			</section>
+
+			<section>
+				<h2>why Angular?</h2>
+				<p>MVVM on the client</p>
+				<p class="fragment">View and logic</p>
+				<p class="fragment">Extending the HTML</p>
+				<p class="fragment">Databinding & DI out-of-the-box</p>
+				<p class="fragment">Modularity</p>
+				<p class="fragment">Multiple languages</p>
+			</section>
+
+			<section>
+				<h2>Advantages</h2>
+				<p>Faster than AngularJS</p>
+				<p class="fragment">Modern Architecture (Web-Components)</p>
+				<div class="fragment">
+					<p>Mobile development</p>
+					<p>...</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Parts of an Angular Applications</h2>
+				<ul>
+					<li>index.html</li>
+					<li>Components</li>
+					<li>Modules</li>
+					<li>Services</li>
+					<li>Pipes</li>
+					<li>Directives</li>
+					<li>...</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>How to get started</h2>
+				<ul>
+					<li>Webpack</li>
+					<li>SystemJS</li>
+					<li>AngularCLI</li>
+					<li>...</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Root-Component</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  template: `
+    <div class="app">
+      Hello world!
+    </div>
+  `
+})
+
+export class AppComponent {}
+					</code></pre>
+			</section>
+
+			<section>
+				<h2>Root-Module</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  imports: [ BrowserModule ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+
+export class AppModule {}
+					</code></pre>
+			</section>
+
+			<section data-transition="none">
+				<h2>main.ts</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+import { AppModule } from './app.module';
+					</code></pre>
+			</section>
+
+			<section data-transition="none" style="font-size: 0.8em">
+				<h2>main.ts</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+					</code></pre>
+			</section>
+
+			<section data-transition="none" style="font-size: 0.8em">
+				<h2>main.ts</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+					</code></pre>
+			</section>
+
+			<section>
+				<h2>index.html</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Angular Start&lt;/title&gt;
+  &lt;link rel=&quot;shortcut icon&quot; href='favicon.ico' /&gt;
+  &lt;meta name=&quot;viewport&quot; 
+		content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;my-app&gt;Loading...&lt;/my-app&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+					</code></pre>
+			</section>
+
+			<section>
+				<h2>Let's have a view...</h2>
+				<p>... on <a href="https://github.com/OfferingSolutions/Offering-Solutions-Angular-Course/tree/master/Angular-Course/00_AngularStart">00_AngularStart</a></p>
+			</section>
+
+			<section>
+				<h2>UseFactory / UseValue</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+				const randomFactory = () => { return Math.random(); };
+
+				@NgModule({
+				   // ...
+				   providers: [
+				      // CalculatorService,
+				      { provide: CalculatorService, useClass: CalculatorService },
+				      { provide: 'RandomWithFactory', useFactory: randomFactory },
+				      { provide: 'RandomWithValue', useValue: Math.random() },
+				      FoodDataService,
+				      Configuration
+				   ],
+				   // ...
+				})</code></pre>
+			</section>
+
+			<section>
+				<h2>UseFactory / UseValue & Inject</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+				constructor(private calculatorService: CalculatorService,
+				      @Inject('RandomWithFactory') randomWithFactory: number,
+				      @Inject('RandomWithValue') randomWithValue: number) {
+				      // ...
+				}
+				</code></pre>
+			</section>
+
+			<section>
+				<h2>Multiproviders</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+const MY_TOKEN: OpaqueToken = new OpaqueToken('MyToken');
+
+@NgModule({
+    // ...
+    providers: [
+        { provide: MY_TOKEN, useValue: 'dep 1', multi: true },
+        { provide: MY_TOKEN, useValue: 'dep 2', multi: true }
+    ],
+    // ...
+})
+				</code></pre>
+
+				<p>dependencies = ['dep 1', 'dep 2']</p>
+
+			</section>
+
+			<section>
+				<h2>Optional Services</h2>
+				<pre><code class="hljs" data-trim contenteditable>
+					import { Optional } from '@angular/core';
+
+					constructor(@Optional() private _firstService: MyFirstService) {  }
+
+				</code></pre>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
